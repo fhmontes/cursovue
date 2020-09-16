@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ titulo }}</h1>
+        <input type="text" v-model="nombreProducto">
+        <button @click="adicionarProducto()">Agregar</button>
+        <table border="1">
+            <tr>
+                <th>NOMBRE</th>
+                <th>CANTIDAD</th>
+                <th>OBSERVACION</th>
+                <th></th>
+            </tr>
+            <tr v-for="prod of productos">
+                <td>{{ prod.nombre }}</td>
+                <td>
+                    <input type="number" v-model.number="prod.cantidad">
+                </td>
+                <td v-if="prod.cantidad > 0">CON STOCK</td>
+                <td v-else>SIN STOCK</td>
+                <td>
+                    <button @click="prod.cantidad++">+</button>
+                </td>
+            </tr>
+        </table>
+        <h4>TOTAL: {{ sumaCantidad }}</h4>
+    </div>
+
+    <!-- versión de desarrollo, incluye advertencias de ayuda en la consola -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="11.js"></script>
+</body>
+</html>

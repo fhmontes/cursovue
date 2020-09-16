@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adicionar bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" class="container-md">
+        <div class="bg-danger p-3">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto aliquam magnam, odio provident adipisci rerum nihil totam temporibus dolorum quod, maiores ipsa, itaque harum ducimus id aut in esse mollitia?
+        </div>
+        <br/>
+        <div class="bg-danger" v-bind:class="'p-3'">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto aliquam magnam, odio provident adipisci rerum nihil totam temporibus dolorum quod, maiores ipsa, itaque harum ducimus id aut in esse mollitia?
+        </div>
+        <br/>
+        <div v-bind:class="['p-3', fondo, 'text-white']">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto aliquam magnam, odio provident adipisci rerum nihil totam temporibus dolorum quod, maiores ipsa, itaque harum ducimus id aut in esse mollitia?
+        </div>
+        <input type="text" class="form-control md" v-model="fondo">
+        
+        <br/>
+        <div class="p-3 text-white" v-bind:class="{'bg-info' : color, 'bg-success': !color}">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto aliquam magnam, odio provident adipisci rerum nihil totam temporibus dolorum quod, maiores ipsa, itaque harum ducimus id aut in esse mollitia?
+        </div>
+        <button class="btn btn-primary" @click="color=!color">Cambiar Color</button>
+        <br><br>
+        <button @click="contador++">Incrementar</button> <span>{{ contador }}</span>
+    
+    </div>
+
+    <!-- versión de desarrollo, incluye advertencias de ayuda en la consola -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="07.js"></script>
+</body>
+</html>
