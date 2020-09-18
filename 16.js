@@ -3,6 +3,19 @@
 const store = new Vuex.Store({
     state: {
         numero: 10
+    },
+    // Mutaciones: Metodos que interactuan con los estados
+    mutations: {
+        subir: function() {
+            this.state.numero++;
+        },
+        bajar: function() {
+            this.state.numero--;
+        },
+        incrementar: function(state, valorIncremento) {
+            state.numero += valorIncremento;
+        }
+
     }
 })
 
